@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener('DOMContentLoaded', (_event) => {
   const name = document.querySelector('#name');
   const textError = document.querySelector('.name-error');
   name.addEventListener('input', function () {
@@ -57,6 +57,7 @@ const save = () => {
   try {
     let employeePayrollData = createEmployeePayroll();
     createAndUpdateStorage(employeePayrollData);
+    alert("Added Succesfully")
   } catch (e) {
     return;
   }
