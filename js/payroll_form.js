@@ -72,14 +72,14 @@ const createEmployeePayroll = () => {
     setTextValue('.name-error', e);
     throw e;
   }
-  employeePayrollData.profilePic = getSelectedValues('[name=profile]').pop();
-  employeePayrollData.gender = getSelectedValues('[name=gender]').pop();
-  employeePayrollData.department = getSelectedValues('[name=department]');
-  employeePayrollData.salary = document.querySelector('#salary').value;
-  employeePayrollData.note = document.querySelector('#notes').value;
+  employeePayrollData._profilePic = getSelectedValues('[name=profile]').pop();
+  employeePayrollData._gender = getSelectedValues('[name=gender]').pop();
+  employeePayrollData._department = getSelectedValues('[name=department]');
+  employeePayrollData._salary = document.querySelector('#salary').value;
+  employeePayrollData._note = document.querySelector('#notes').value;
   let date = document.querySelector('#day').value + ' ' + document.querySelector('#month').value + ' ' +
     document.querySelector('#year').value;
-  employeePayrollData.startDate = new Date(date);
+  employeePayrollData._startDate = new Date(date);
   alert(employeePayrollData.toString());
   return employeePayrollData;
 }
@@ -88,6 +88,7 @@ const getSelectedValues = (propertyValue) => {
   let allItems = document.querySelectorAll(propertyValue);
   let selItems = [];
   allItems.forEach(item => {
+    console.log(item);
     if (item.checked) selItems.push(item.value);
   });
   return selItems;
